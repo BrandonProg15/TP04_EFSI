@@ -1,6 +1,7 @@
 import './Formulario.css'
 import { useState } from "react"
 
+
 function Formulario({ agregarCita }) {
     const [mascota, setMascota] = useState("")
     const [Dueño, setDueño] = useState("")
@@ -27,7 +28,6 @@ function Formulario({ agregarCita }) {
                 <form onSubmit={manejarSubmit}>
                     <label>Nombre Mascota</label><input type="text" name="mascota" className="u-full-width" placeholder="Nombre Mascota"
                         value={mascota} onChange={(e) => setMascota(e.target.value)} />
-
                     <label>Nombre Dueño</label><input type="text" name="propietario" className="u-full-width"
                         placeholder="Nombre dueño de la mascota" value={Dueño} onChange={(e) => setDueño(e.target.value)} />
                     <label>Fecha</label><input type="date" name="fecha" className="u-full-width" value={Fecha} onChange={(e) => setFecha(e.target.value)} />
@@ -39,8 +39,6 @@ function Formulario({ agregarCita }) {
 
         </>
     )
-
-
 }
 export default Formulario;
 
