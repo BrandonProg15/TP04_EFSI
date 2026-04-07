@@ -1,6 +1,7 @@
 import './Listado.css'
 
-function Listado({ citas }) {
+function Listado({ citas, eliminarCita }) {
+
   return (
     <div className="one-half column">
       <h2>Administra tus citas</h2>
@@ -12,14 +13,24 @@ function Listado({ citas }) {
           <p>Fecha: <span>{cita.Fecha}</span></p>
           <p>Hora: <span>{cita.Hora}</span></p>
           <p>Sintomas: <span>{cita.Sintomas}</span></p>
-          <button className="button eliminar u-full-width">
+          <button
+            className="button eliminar u-full-width"
+            onClick={() => {
+              const confirmar = window.confirm("¿Seguro que querés eliminar?");
+              if (confirmar) {
+                eliminarCita(index);
+              }
+            }}
+          >
             Eliminar ×
           </button>
         </div>
       ))}
 
     </div>
+
   )
+
 }
 
 export default Listado;
